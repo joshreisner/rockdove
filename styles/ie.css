@@ -1,0 +1,17 @@
+/* fixes for IE.  yay IE */
+
+#container { overflow-y:visible; }
+#container ul.tabs { height:20px; }
+#container ul.tabs li a { margin-left:4px; }
+
+#strawpatch ul { list-style-type:none; margin:0px 0px 15px 0px; }
+#strawpatch li { margin-left:0px; }
+
+#strawpatch #content ul.treeview li.submenu { margin-left:0px; }
+
+div.panel { width:224px; }
+
+input.text { width:280px; height:25px; }
+input.password { width:280px; height:25px; }
+
+form dt { height:32px; }
