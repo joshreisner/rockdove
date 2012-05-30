@@ -1,6 +1,5 @@
 <?php
 extract(joshlib());
-//debug();
 
 //security
 session_start();
