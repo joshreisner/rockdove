@@ -1,0 +1,161 @@
+/*global*/
+html, body { height:100%; }
+body { text-align:center; margin:0px; padding:0px; background:url(/images/fleur-de-lis.png) repeat; }
+body, table { font-family:verdana,helvetica,sans-serif; font-size:11px; line-height:18px; color:#444; }
+
+#container { text-align:left; position: relative; min-height:100%; overflow-y:auto; padding:0px 4px 0px 4px; width:900px; margin:0px auto 0px auto; background-image:url(/images/background.png); background-repeat:repeat-y; }
+* html #container { height:100%; }
+
+#footer { position:relative; margin:-30px auto 0 auto; height:30px; font-size:12px; width:900px; padding:0px 4px 0px 4px;  }
+#footer .center { position:absolute; width:661px; right:12px; text-align:center; }
+* html #footer { margin-top:-31px; }
+
+#main { position:relative; float:left; width:661px; }
+
+
+#border_right { background:url(/images/shadow-right.png); }
+#border_left { background:url(/images/shadow-left.png); }
+
+a		{ color:#0033CC; outline:none; }
+a:hover	{ color:#CC3300; }
+
+
+/*strawpatch*/
+#strawpatch { width:231px; float:left; }
+#strawpatch #content { margin:25px 15px 25px 25px; }
+#strawpatch #content a { padding:1px 2px 1px 2px; margin:0px -2px 0px -2px; text-decoration:none; }
+#strawpatch #content a:hover { text-decoration:underline; }
+#strawpatch #content a.selected { color:#CC3300; text-decoration:underline; }
+
+#strawpatch ul { list-style-type:none; margin:0px 0px 15px 0px; }
+#strawpatch li { margin-left:-40px; padding:0px;  }
+
+#strawpatch #content ul.treeview li.submenu { cursor:pointer; margin-left:-38px; }
+#strawpatch #content ul.treeview li.submenu ul { display: none; margin:0px 0px 6px 13px; }
+
+
+/*top*/
+#login { position:absolute; color:#bbcdd9; text-decoration:none; text-transform:uppercase; top:1px; right:6px; }
+#login:hover { text-decoration:underline; color:#d2e8f6; }
+
+#member { position:relative; background-color:#51657c; text-align:right; height:20px; padding:0px; line-height:16px; text-transform:uppercase; border-bottom:1px dashed #cbdde9; }
+#member ul.admin { margin:0px; list-style:none; padding:1px 5px 1px 10px; }
+#member ul.admin li { float:left; margin:0px 18px 0px 0px; padding:0px; }
+#member a { color:#cbdde9; text-decoration:none; }
+#member a:hover, #member a.selected { color:#fff; text-decoration:underline; }
+
+#banner { background:url(/images/banner-background.png) repeat-y; }
+#container ul.tabs { margin:0px; list-style:none; padding:0px 0px 0px 8px; height:25px; }
+#container ul.tabs li { float:left; clear:none;  }
+#container ul.tabs li a { float:left; clear:none; margin:0px 0px 0px 8px; width:auto; display:block; background-color:#7b9ec6; height:21px; color:#fff; font-size:12px; line-height:20px; padding:2px 9px 2px 9px; text-decoration:none; width:auto; }
+#container ul.tabs li a:hover { background-color:#88a9cf; }
+#container ul.tabs li a.selected, #container ul.tabs li a.selected:hover { background-color:#fff; color:#444; }
+#container ul.tabs li a.option1 { margin-left:12px; }
+
+
+/*page and header*/
+#page { padding:20px 20px 40px 20px; font-size:13px; line-height:20px; position:relative; }
+#page h1  { font-size:20px; font-weight:normal; margin:3px 0px 17px 0px; width:621px; padding:0px; /* border:1px solid black; */ }
+#page h2 { font-size:16px; font-style:italic; font-weight:normal; margin:18px 0px 18px 0px; line-height:20px;}
+#page div.control { right:20px; top:20px; position:absolute; }
+#page div.control input { margin:0px 0px 0px 5px; }
+#page ul { list-style:none; margin:0px 0px 5px 0px; padding-left:14px; text-indent:-11px; }
+
+
+/*calendar*/
+#page div.alert { background-color:#ddeeff; font-size:12px; padding:10px; }
+#page div.calendar_block { margin-bottom:30px; min-height:80px; clear:both; }
+#page div.calendar_block:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
+
+#page div.calendar_date { float:left; background-color:#ddeeff; padding:8px 12px 8px 12px; }
+#page div.calendar_date_month { text-align:center; text-transform:uppercase; font-size:14px; }
+#page div.calendar_date_day { text-align:center; font-size:24px; }
+#page div.calendar_date_year { text-align:center; font-size:11px; line-height:13px; }
+#page div.calendar_title { width:560px; float:right; font-size:17px; margin-bottom:10px; }
+#page div.calendar_text { width:560px; float:right; }
+a.calendar_edit { line-height:34px; text-decoration:none; font-size:11px; text-transform:uppercase; background-color:#f9b81b; color:#fff; border-color:#ffcc33; border-width:1px; border-style:solid; padding:1px 3px 1px 3px; margin:0px -2px -5px -2px; }
+a.calendar_edit:hover { background-color:#ffcc33; cursor:pointer; }
+
+/*map*/
+#map { width:620px; height:420px; border:1px solid #ccc; margin-bottom:20px; }
+div.map_info { width:230px; height:155px; background-color:#fff; }
+div.map_info div.map_title {  font-size:13px; font-weight:bold; }
+div.map_info div.map_description { font-size:11px; line-height:14px; }
+
+
+/*links*/
+div.link { margin:10px 0px 10px 0px; }
+div.link a { font-size:15px; }
+div.link a.link_edit { line-height:34px; text-decoration:none; font-size:11px; text-transform:uppercase; background-color:#f9b81b; color:#fff; border-color:#ffcc33; border-width:1px; border-style:solid; padding:1px 3px 1px 3px; margin:0px -2px -5px -2px; }
+div.link a.link_edit:hover { background-color:#ffcc33; cursor:pointer; }
+
+
+/*directory*/
+div.panel { color:#555; line-height:20px; font-size:12px; float:right; width:200px; background-color:#EEEEEE; padding:12px; margin:0px 0px 0px 10px;}
+div.panel span.list_heading { text-transform:uppercase; font-size:11px; color:#555; margin-top:12px; display:block; font-weight:bold; }
+div.panel ul { margin:0px 0px 5px 0px; padding-left:20px; text-indent:-20px; }
+.admin_panel { color:#eee; line-height:20px; font-size:12px; width:200px; background-color:#777; padding:12px; margin:10px -12px -12px -12px;}
+.admin_panel a { color:#bef; }
+.admin_panel a:hover { color:#fff; }
+a.editlink { line-height:34px; text-decoration:none; font-size:11px; text-transform:uppercase; background-color:#f9b81b; color:#fff; border-color:#ffcc33; border-width:1px; border-style:solid; padding:2px 8px 3px 8px; }
+a.editlink:hover { background-color:#ffcc33; cursor:pointer; }
+
+
+/*table*/
+#page table { width:621px; border:none; margin-top:10px; }
+#page table tr.odd { background-color:#e8f0fc; }
+#page table th, #page table td { height:26px; /* border-bottom:1px solid #eee; */ padding:0px 3px 0px 3px; }
+#page table th { text-align:left; font-weight:normal; vertical-align:bottom; color:#aaa; }
+#page table td { font-size:13px; }
+#page table th.c, td.c { text-align:center; }
+#page table th.r, td.r { text-align:right; }
+#page table tr.odd:hover, #page table tr.even:hover { background-color:#f1f1f1; cursor:pointer; }
+#page table td.group { font-size:11px; font-weight:bold; padding:18px 0px 2px 1px; }
+
+
+/*form*/
+input, select, textarea { padding:3px; border:1px solid #ddd; font-size:13px; background-color:#eee; margin-right:8px; font-family:verdana,helvetica,sans-serif; }
+textarea { width:420px; height:240px; }
+textarea.mceEditor { width:220px; height:240px; border:0px solid #fff; padding:0px; }
+
+div.checkbox_option { /* border:1px solid blue; */ width:150px; float:left; margin:4px 4px 0px 0px; height:18px; }
+div.checkbox_option input { margin:0px 2px 0px 0px; }
+span.option_name { /*border:1px solid green; */ font-size:10px; line-height:16px;  vertical-align:top; }
+span.option_name:hover { background-color:#f1f1f1; cursor:pointer; text-decoration:underline; }
+
+div.radio_option { margin:0px; line-height:18px; margin:6px 0px 15px 0px; padding-left:20px; font-size:12px; }
+div.radio_option input { float:left; margin:3px 5px 0px -20px; height:15px; border:1px solid green; }
+div.radio_title { font-weight:bold; }
+
+input.text { width:280px; }
+input.zip { width:52px; }
+input.button, input.submit { background-color:#f9b81b; color:#fff; border-color:#ffcc33; padding:2px 5px 4px 5px; outline:none; }
+input.button:hover, input.submit:hover { background-color:#ffcc33; cursor:pointer; }
+
+/*remove horrible firefox button outline */
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+border: none;
+}
+
+form fieldset { border:0px; padding:0px; margin:0px; }
+form legend { display:none; }
+form div.field { margin-bottom:10px; clear:left; overflow:auto; }
+form div.field label { display:block; width:100px; float:left; }
+form div.field ul { float:left; width:400px; }
+form div.field ul li { float:left; width:133px; }
+form div.field div.radio { width:400px; float:left; }
+form div.submit { margin-left:97px; }
+
+/* form deprecated */
+dl							{ width:600px;  margin:0px 0px 0px 0px; float:left; clear:both; }
+dl dt						{ clear:both; line-height:20px; min-height:25px; padding:8px 5px 2px 5px; width:110px; float:left; color:#999; text-align:right; }
+dl dt a { font-size:11px; display:block; line-height:11px; }
+dl dd						{ clear:right; line-height:20px; min-height:25px; float:right; padding:5px; width:470px; margin:0px 0px 0px 0px }
+dl dd.message				{ overflow-x:auto; padding:0px 14px 0px 16px; width:570px; margin:0px; max-height:260px; min-height:160px; }
+dl dd div.note				{ color:#777; margin-top:14px; font-size:12px; }
+dl dd.button, dl dd.submit	{ padding:5px; clear:both; margin-bottom:40px; }
+
