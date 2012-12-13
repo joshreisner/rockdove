@@ -33,7 +33,7 @@ if ($_SESSION["user_id"]) {
 	} else {
 		echo "<p>Members of the Collective can use this form to log in to the database.  If you'd like to join, please <a href='/contact/?type=volunteer'>contact us</a>.</p>";
 	}
-	$form = new form(false, false, false);
+	$form = new form('login', false, false);
 	$form->set_field(array("type"=>"text", "label"=>"Email Address", "value"=>@$_COOKIE["last_login"], "required"=>true));
 	$form->set_field(array("type"=>"password", "label"=>"Password", "additional"=>"<a href='/login/password/'>Don't know it?</a>", "required"=>true));
 	//$form->set_field(array("type"=>"checkbox", "label"=>"Remember Me"));

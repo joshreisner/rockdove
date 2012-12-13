@@ -20,13 +20,13 @@ function drawBottom() {
 				</div>
 			</div>
 		</div>
-	<? if ($_josh["request"]["folder"] != "admin") {?>
+	<?php if ($_josh["request"]["folder"] != "admin") {?>
 		<div id="footer"><div class="center">Have a question?  <a href="/contact/">Contact us</a>!</div></div>
-	<? }?>
-		<?=draw_google_tracker("UA-80350-5")?>
+	<?php }?>
+		<?php echo draw_google_analytics("UA-80350-5")?>
 	</body>
 </html>
-<?
+<?php
 }
 
 function drawButton($options) {
@@ -42,15 +42,15 @@ function drawTop($title="Rock Dove Collective") {
 	global $_josh, $_SESSION;
 ?><html>
 	<head>
-		<?=draw_meta_utf8()?>
-		<title><?=strip_tags($title)?></title>
+		<?php echo draw_meta_utf8()?>
+		<title><?php echo strip_tags($title)?></title>
 		<script language="javascript" src="/javascript.js"></script>
 		<link rel="icon" type="image/png" href="/images/favicon.png">
-		<link rel="stylesheet" href="/styles/screen.css">
+		<link rel="stylesheet" href="/css/screen.css">
 		<!--[if IE]>
-		<link rel="stylesheet" type="text/css" href="/styles/ie.css"></style>
+		<link rel="stylesheet" type="text/css" href="/css/ie.css"></style>
 		<![endif]-->
-		<?=draw_javascript()?>
+		<?php echo draw_javascript()?>
 		<script language="javascript" type="text/javascript" src="/_site/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
 		<script language="javascript">
 			<!--
@@ -62,26 +62,26 @@ function drawTop($title="Rock Dove Collective") {
 		<a name="top"></a>
 		<div id="container">
 			<div id="strawpatch">
-				<?=draw_img("/images/tolga.jpg", "/")?>
+				<?php echo draw_img("/images/tolga.jpg", "/")?>
 				<div id="content">
 	
 				<b>About Us</b>
-				<?=draw_navigation(array(
+				<?php echo draw_nav(array(
 					"/mission/"=>"Mission Statement", 
 					"/ethics/"=>"Code of Ethics",
 					"/open-source/"=>"About this site"
-					), true, "text", "strawpatch_list")?>
+					), 'text', 'strawpatch_list')?>
 				
 				<b>Get Involved!</b>
-				<?=draw_navigation(array(
+				<?php echo draw_nav(array(
 					"/beaprovider/"=>"Be a Service Provider", 
 					"/calendar/"=>"Event Calendar", 
 					"/waysyoucanhelp/"=>"Ways You Can Help"
-					), true, "text", "strawpatch_list")?>
+					), 'text', 'strawpatch_list')?>
 				
-				<b><a href="/directory/" style="margin-left:-2px;" class="<? if ($_josh["request"]["path_query"] == "/directory/") {?>selected<? }?>">Provider Directory</a></b>
+				<b><a href="/directory/" style="margin-left:-2px;" class="<?php if ($_josh["request"]["path_query"] == "/directory/") {?>selected<?php }?>">Provider Directory</a></b>
 				<ul id="treeview" class="treeview">
-				<?
+				<?php
 				$categories = db_query("SELECT 
 						c.id, 
 						c.name 
@@ -109,7 +109,7 @@ function drawTop($title="Rock Dove Collective") {
 								(SELECT COUNT(*) FROM providers_to_services p2s JOIN providers p ON p2s.object_id = p.id WHERE s.id = p2s.option_id AND p.status = 'Approved') > 0
 							ORDER BY s.title");
 						while ($s = db_fetch($services)) $options["/directory/?type=" . $s["id"]] = $s["title"] . " (" . $s["num_providers"] . ")";
-						echo draw_navigation($options, true, "text", "strawpatch_list");
+						echo draw_nav($options, "text", "strawpatch_list");
 						
 					echo "</li>";
 				}
@@ -123,9 +123,9 @@ function drawTop($title="Rock Dove Collective") {
 	
 			<div id="main">
 				<div id="banner">
-					<? if ($_SESSION["user_id"]) {?>
+					<?php if ($_SESSION["user_id"]) {?>
 					<div id="member">
-					<?
+					<?php
 					$options = array(
 						"/admin/users.php"=>"Admins", 
 						"/admin/allies.php"=>"Allies", 
@@ -134,29 +134,29 @@ function drawTop($title="Rock Dove Collective") {
 						"/admin/services.php"=>"Services", 
 						"/login/?action=logout"=>"Logout"
 						);
-					echo draw_navigation($options, true, "text", "admin");
+					echo draw_nav($options, "text", "admin", 'path');
 						//move last option off to the left
 						//this might be better as a separate thing not in the <ul> above
 					?>
-						<style type="text/css">#member a.option<?=count($options)?> { position:absolute; top:1px; right:6px; }</style>
+						<style type="text/css">#member a.option<?php echo count($options)?> { position:absolute; top:1px; right:6px; }</style>
 					</div>
-					<? } elseif ($_josh["request"]["folder"] != "login") {
+					<?php } elseif ($_josh["request"]["folder"] != "login") {
 						echo '<a href="/login/" id="login">Member Login</a>';
 					}
 					echo draw_img("/images/banner-olicana.png");
-					echo draw_navigation(array(
+					echo draw_nav(array(
 						"/"=>"Home", 
 						"/directory/"=>"Provider Directory", 
 						"/fyi/"=>"For Your Information", 
 						"/mutual-aid/"=>"Mutual Aid",
 						"/doves/"=>"Meet the Doves",
 						"/contact/"=>"Contact"
-						), "/" . $_josh["request"]["folder"] . "/", "text", "tabs")?>
+						), 'text', 'tabs', "/" . $_josh["request"]["folder"] . "/")?>
 		
 				</div>
 				<div id="page">
-					<h1><?=$title?></h1>
-					<?
+					<h1><?php echo $title?></h1>
+					<?php
 }
 
 function error_email($msg="Undefined error message") {
