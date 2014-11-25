@@ -1,4 +1,7 @@
-<? include("../include.php");
+<?php
+
+	include("../include.php");
+/*
 
 if ($posting) {
 	if ($_POST["topic"] == "technical") {
@@ -9,10 +12,11 @@ if ($posting) {
 	email($email, "thank you for your submission. we'll be following up with you shortly", "thank you");
 	url_change("/contact/thankyou/");
 }
+*/
 echo drawTop("Contact Us");
 
-echo "<p>You can use this form to send us an email.  Please pay special attention to the Topic field; it determines who will receive your message.</p>";
 /*
+echo "<p>You can use this form to send us an email.  Please pay special attention to the Topic field; it determines who will receive your message.</p>";
 
 if ($action == "email_provider") {
 	josh_sys_email_postdata($email, "rockdovecollective@riseup.net, laurengiambrone@gmail.com", "Web: Service Provider Feedback Form");
@@ -33,7 +37,7 @@ if (url_action("seeker")) {?>
 	a provider that's right for you.</p>
 	
 	<p>Please be sure to indicate what you are looking for and what you have to offer in the way of money, insurance, or <a href="/mutual-aid/">mutual aid</a>.</p>
-<? } */
+<?php } 
 
 $form = new form(false, false, false);
 $form->set_field(array("type"=>"text", "name"=>"name", "label"=>"Name/Alias", "required"=>true));
@@ -48,5 +52,10 @@ $form->set_field(array("type"=>"select", "name"=>"topic", "label"=>"Topic", "val
 $form->set_field(array("type"=>"textarea", "name"=>"message", "label"=>"Message", "class"=>"textarea"));
 $form->set_field(array("type"=>"submit", "name"=>"", "label"=>"", "value"=>"send message"));
 echo $form->draw("contact");
+*/
+?>
 
-echo drawBottom(); ?>
+<?php
+echo drawBottom(); 
+
+?>

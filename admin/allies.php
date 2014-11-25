@@ -1,4 +1,4 @@
-<? include("../include.php");
+<?php include("../include.php");
 
 $allies = db_table("SELECT 
 		id, 
@@ -11,7 +11,7 @@ for ($i = 0; $i < $count; $i++) {
 	$allies[$i]["link"]	 = "allies-edit.php?id=" . $allies[$i]["id"];
 	$allies[$i]["updated_date"] = format_date($allies[$i]["updated_date"]);
 }
-echo drawTop("Allies: " . format_q($count, "link"));
+echo drawTop("Allies: " . format_quantitize($count, "link"));
 echo drawButton(array("+ New Link"=>"allies-edit.php"));
 $table = new table();
 $table->col("name");

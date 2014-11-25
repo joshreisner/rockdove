@@ -1,4 +1,4 @@
-<? include("../include.php");
+<?php include("../include.php");
 
 if ($posting) {
 	format_post_nulls("gender_id, tier_id");
@@ -89,6 +89,14 @@ if (isset($_GET["msg"]) && ($_GET["msg"] == "tier_required")) {
 }
 ?>
 
+<div class="message"><strong>Please Note:</strong> Provider application reviews are currently on hold.</div>
+
+<p>Thank you for your interest in becoming a Rock Dove provider! In order to devote time towards strengthening the relationship with our current providers, we are not reviewing any new applications until 
+April 2012. Feel free to submit your application, but please be mindful of the fact that we won't be able to review it until the spring. Again, thank you for your interest and we look forward to hearing 
+from you in April!</p>
+
+<hr/>
+
 <p>Welcome. We're so glad you stopped by.  Service providers are an essential element to the Rock Dove Project. With them, we are working to create a network where
 good health and well being can be achieved in life-affirming ways.
 They provide all types of important services to our communities,
@@ -103,7 +111,7 @@ Agreed? Great! To get started as a Service Provider, please fill out this form. 
 <p>Also, please write about yourself in the third person!</p>
 
 
-<?
+<?php
 $p["url"] = "http://";
 echo providerForm("Be A Provider", $p);
 echo drawBottom()?>

@@ -1,4 +1,4 @@
-<? include("../include.php");
+<?php include("../include.php");
 
 $providers = db_table("SELECT 
 	p.id, 
@@ -15,7 +15,7 @@ for ($i = 0; $i < $count; $i++) {
 	$providers[$i]["link"]	 = "providers-edit.php?id=" . $providers[$i]["id"];
 	$providers[$i]["updated_date"]	 = format_date($providers[$i]["updated_date"]);
 }
-echo drawTop("Directory: " . format_q($count, "provider"));
+echo drawTop("Directory: " . format_quantitize($count, "provider"));
 echo drawButton(array("+ New Provider"=>"providers-edit.php"));
 $table = new table();
 $table->col("name");

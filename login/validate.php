@@ -11,4 +11,4 @@ if ($providerID = db_grab("SELECT id FROM providers WHERE email_id = " . $_GET["
 echo drawTop("You Are So Valid");
 ?>
 <p>Thank you!  We know it's a silly exercise, but it really does help us cut down on spam submissions.  Thanks!  The ball is in our court now; we will follow up with you shortly.</p>
-<?=drawBottom();?>
+<?php echo drawBottom();?>

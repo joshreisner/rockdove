@@ -1,4 +1,4 @@
-<? include("../../include.php");
+<?php include("../../include.php");
 echo drawTop('<a href="/fyi/">For Your Information</a> - What Is Mutual Aid?');?>
 
 <div class="panel">You can <a href="mutual-aid.pdf">download</a> this tip sheet and take it with you.  (The PDF version also has a helpful worksheet.)</div>
@@ -38,4 +38,4 @@ a lift.</p>
 <p>The Rock Dove Collective strongly encourages mutual aid between our service seekers and providers, friends and comrades, allies and neighbors, and believes that incorporating mutual aid into more instances in our lives will help to set the foundation for a freer and more just world.  We are available to coordinate 3, 4, or 10-way exchanges, to offer up some aid of our own so you can get what you need for free, to accept donations of work or things that we can offer to our providers so they can care for folks who need it, and to making these practices part of our daily lives as we get and stay well together.  It only works if you join in.  Consider yourself invited.</p>
 
 
-<? echo drawBottom(); ?>
+<?php echo drawBottom(); ?>

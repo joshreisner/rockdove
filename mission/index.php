@@ -1,4 +1,4 @@
-<? include("../include.php");
+<?php include("../include.php");
 echo drawTop("Mission Statement");?>
 
 <b>We want to live in a healthy environment.</b><br />
@@ -26,4 +26,4 @@ We believe that every human being, regardless of his or her ethnicity, culture, 
 </p>
 
 
-<? echo drawBottom(); ?>
+<?php echo drawBottom(); ?>

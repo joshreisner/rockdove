@@ -1,4 +1,4 @@
-<? include("../include.php");
+<?php include("../include.php");
 
 if ($posting) {
 	//debug();
@@ -92,6 +92,6 @@ if (url_id()) {
 echo drawTop("Directory: " . $msg);
 ?>
 <p>Use this form to add providers to the <a href="/directory/">Provider Directory</a>.</p>
-<?
+<?php
 echo providerForm($msg, $p, true);
 echo drawBottom();?>

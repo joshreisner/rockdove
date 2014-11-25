@@ -7,9 +7,9 @@ url_query_require("../");
 $p = db_grab("SELECT p.name, g.pronoun, g.pronoun_possessive FROM providers p JOIN options_gender g ON p.gender_id = g.id WHERE p.id = " . $_GET["id"]);
 echo drawTop('<a href="/directory/">Directory</a>: Contact ' . $p["name"]);
 ?>
-<p>Please fill out the following form to contact <?=$p["name"]?>.  This information will be shared with <?=$p["pronoun"]?> 
-and <!--<?=$p["pronoun_possessive"]?> information sent to you--> the Rock Doves, no one else.</p>
-<?
+<p>Please fill out the following form to contact <?php echo $p["name"]?>.  This information will be shared with <?php echo $p["pronoun"]?> 
+and <!--<?php echo $p["pronoun_possessive"]?> information sent to you--> the Rock Doves, no one else.</p>
+<?php
 $form = new form;
 $form->addField(array("type"=>"text", "name"=>"name", "label"=>"Name/Alias", "required"=>true));
 $form->addField(array("type"=>"text", "name"=>"email", "label"=>"Email", "required"=>true));

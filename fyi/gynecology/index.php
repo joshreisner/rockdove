@@ -1,4 +1,4 @@
-<? include("../../include.php");
+<?php include("../../include.php");
 echo drawTop('<a href="/fyi/">For Your Information</a> - Visiting the Gynecologist');?>
 <div class="panel">You can <a href="gynecologist.pdf">download</a> this tip sheet and take it with you.</div>
 <p>All female-bodied people over age 16 are recommended to visit the gynecologist once a year for a check-up.  This should include a
@@ -55,4 +55,4 @@ not asked for.<br><br></li>
 presented by women who have experience going to gynecologists and have a working knowledge of health and sex education.  If you have
 grounds to find any of this information detrimental or incorrect, please email us at 
 <a href="mailto:rockdovecollective@riseup.net">rockdovecollective@riseup.net</a> and we'll address your concerns right away.</i></p>
-<? echo drawBottom(); ?>
+<?php echo drawBottom(); ?>

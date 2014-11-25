@@ -14,4 +14,4 @@ echo drawTop('<a href="/directory/">Directory</a>: Thank You');
 </ul>
 
 
-<?=drawBottom();?>
+<?php echo drawBottom();?>

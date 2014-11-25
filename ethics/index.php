@@ -1,4 +1,4 @@
-<? include("../include.php");
+<?php include("../include.php");
 echo drawTop("Rock Dove Code of Ethics");?>
 The language and content of this code is drawn primarily from the <a href="http://www.socialworkers.org/pubs/code/code.asp">Code of Ethics of the National Association of Social Workers</a>.  While our service providers represent a far broader range of skill, approach, expertise, and profession that just "social work," and while
 our anti-capitalist views lead us to question certain aspects of the
@@ -247,4 +247,4 @@ As a future aspect of the Rock Dove Project, we hope to build a
 directory of resources and information for children and families about
 alternatives to entering the government system in situations of abuse.
 </ol>
-<? echo drawBottom(); ?>
+<?php echo drawBottom(); ?>

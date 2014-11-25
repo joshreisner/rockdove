@@ -1,4 +1,4 @@
-<? include("../../include.php");
+<?php include("../../include.php");
 echo drawTop('<a href="/fyi/">For Your Information</a> - Accessing Food Stamps');?>
 <div class="panel">You can <a href="food-stamps.pdf">download</a> this tip sheet and take it with you.</div>
 
@@ -32,4 +32,4 @@ Human Resources Administration Infoline (the ones who give out Food Stamps): 1-8
 Expedited Processing of Food Stamps Information: 1-800-342-3009<br>
 Public Benefits Resource Center (Benefits counseling over the phone): 212-614-5444 or 212-614-5552</p>
 
-<? echo drawBottom(); ?>
+<?php echo drawBottom(); ?>

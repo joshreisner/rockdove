@@ -1,4 +1,4 @@
-<? include("../include.php");
+<?php include("../include.php");
 
 if ($posting) {
 	if (url_id()) {
@@ -37,7 +37,7 @@ if (url_id()) {
 echo drawTop("Users: " . $msg);
 ?>
 <p>Use this form to add administrators to the site.  The bio will eventually show up on the <a href="/doves/">Meet the Doves</a> page.</p>
-<?
+<?php
 $form = new form('users');
 $form->set_field(array("type"=>"text", "name"=>"name", "label"=>"Name", "value"=>@$u["name"]));
 $form->set_field(array("type"=>"text", "name"=>"email", "label"=>"Email", "value"=>@$u["email"]));

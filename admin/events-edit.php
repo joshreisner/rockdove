@@ -1,4 +1,4 @@
-<? include("../include.php");
+<?php include("../include.php");
 
 if ($posting) {
 	if (url_id()) {
@@ -39,7 +39,7 @@ if (url_id()) {
 echo drawTop("Calendar: " . $msg);
 ?>
 <p>Use this form to add events to the <a href="/calendar/">Event Calendar</a>.</p>
-<?
+<?php
 $form = new form('events');
 $form->set_field(array("type"=>"text", "name"=>"name", "label"=>"Event Name", "value"=>@$e["name"], "required"=>true));
 $form->set_field(array("type"=>"datetime", "name"=>"start", "label"=>"Starts", "value"=>@$e["start"]));

@@ -1,4 +1,4 @@
-<? include("../include.php");
+<?php include("../include.php");
 echo drawTop("What Is Mutual Aid?");?>
 
 <div class="panel">We encourage mutual aid between our service seekers and providers, our friends and our comrades, our allies and our neighbors.  We believe 
@@ -91,4 +91,4 @@ Thanks for your (mutual) help!!
 -->
 
 
-<? echo drawBottom(); ?>
+<?php echo drawBottom(); ?>

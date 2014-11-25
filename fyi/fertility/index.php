@@ -1,4 +1,4 @@
-<? include("../../include.php");
+<?php include("../../include.php");
 echo drawTop('<a href="/fyi/">For Your Information</a> - Fertility Awareness');?>
 <div class="panel">You can <a href="fertility.pdf">download</a> this tip sheet and take it with you.</div>
 
@@ -52,4 +52,4 @@ For excellent reading, check out The Garden of Fertility and Honoring Our Cycles
 <br><br>
 For good web resources on FA, check out Justisse Healthworks for Women at www.justisse.com or look up "Fertility Awareness" on Wikipedia.
 
-<? echo drawBottom(); ?>
+<?php echo drawBottom(); ?>

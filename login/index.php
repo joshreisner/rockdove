@@ -1,6 +1,7 @@
 <?php
 include("../include.php");
 
+/*
 if (url_action("logout")) {
 	$_SESSION["user_id"] = false;
 	if (isset($_josh["referrer"]["path_query"])) {
@@ -22,9 +23,11 @@ if (url_action("logout")) {
 		url_query_add(array("msg"=>"notok"));
 	}
 }
+*/
 
 echo drawTop("Member Login");
 
+/*
 if ($_SESSION["user_id"]) {
 	echo "<p>Welcome!  You are now logged in.  You should see some options at the very top of the page, you can use these to do administrative-type things.  This page might eventually have an update screen with news about the database, although that's not ready yet.</p>";
 } else {
@@ -33,7 +36,7 @@ if ($_SESSION["user_id"]) {
 	} else {
 		echo "<p>Members of the Collective can use this form to log in to the database.  If you'd like to join, please <a href='/contact/?type=volunteer'>contact us</a>.</p>";
 	}
-	$form = new form('login', false, false);
+	$form = new form(false, false, false);
 	$form->set_field(array("type"=>"text", "label"=>"Email Address", "value"=>@$_COOKIE["last_login"], "required"=>true));
 	$form->set_field(array("type"=>"password", "label"=>"Password", "additional"=>"<a href='/login/password/'>Don't know it?</a>", "required"=>true));
 	//$form->set_field(array("type"=>"checkbox", "label"=>"Remember Me"));
@@ -43,4 +46,4 @@ if ($_SESSION["user_id"]) {
 
 }
 echo drawBottom();
-?>
+*/

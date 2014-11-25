@@ -1,4 +1,4 @@
-<? include("../../include.php");
+<?php include("../../include.php");
 echo drawTop('<a href="/fyi/">For Your Information</a> - Dealing With Conflict');?>
 
 <div class="panel">You can <a href="conflict.pdf">download</a> this tip sheet and take it with you.</div>
@@ -102,4 +102,4 @@ others to join, suggest to others that they take part in a circle of their own, 
 hard conversations about ourselves, our race, class, gender, or other aspects of our identity, our community, 
 movement, and our world.  We recommend reading Peacemaking Circles by Kay Pranis if you want to know more.  
 But mostly, we recommend drawing from your and your community's insight, strength, smarts, and experience. </p>
-<? echo drawBottom(); ?>
+<?php echo drawBottom(); ?>

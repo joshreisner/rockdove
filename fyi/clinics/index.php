@@ -1,4 +1,4 @@
-<? include("../../include.php");
+<?php include("../../include.php");
 echo drawTop('<a href="/fyi/">For Your Information</a> - Getting the Most Out of Free Care');?>
 <div class="panel">You can <a href="clinics.pdf">download</a> this tip sheet and take it with you.</div>
 
@@ -17,4 +17,4 @@ echo drawTop('<a href="/fyi/">For Your Information</a> - Getting the Most Out of
 <li><b>Does your staff receive any training in working effectively with queer and/or 
 transgender people?</b></li>
 </ol>
-<?=drawBottom()?>
+<?php echo drawBottom()?>

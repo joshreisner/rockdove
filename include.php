@@ -1,5 +1,6 @@
 <?php
 extract(joshlib());
+//debug();
 
 //security
 session_start();
@@ -46,17 +47,11 @@ function drawTop($title="Rock Dove Collective") {
 		<title><?php echo strip_tags($title)?></title>
 		<script language="javascript" src="/javascript.js"></script>
 		<link rel="icon" type="image/png" href="/images/favicon.png">
-		<link rel="stylesheet" href="/css/screen.css">
+		<link rel="stylesheet" href="/styles/screen.css">
 		<!--[if IE]>
-		<link rel="stylesheet" type="text/css" href="/css/ie.css"></style>
+		<link rel="stylesheet" type="text/css" href="/styles/ie.css"></style>
 		<![endif]-->
 		<?php echo draw_javascript()?>
-		<script language="javascript" type="text/javascript" src="/_site/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
-		<script language="javascript">
-			<!--
-			form_tinymce_init("/styles/textarea.css");
-			//-->
-		</script>
 	</head>
 	<body>
 		<a name="top"></a>
@@ -70,14 +65,14 @@ function drawTop($title="Rock Dove Collective") {
 					"/mission/"=>"Mission Statement", 
 					"/ethics/"=>"Code of Ethics",
 					"/open-source/"=>"About this site"
-					), 'text', 'strawpatch_list')?>
+					), true, "text", "strawpatch_list")?>
 				
 				<b>Get Involved!</b>
 				<?php echo draw_nav(array(
 					"/beaprovider/"=>"Be a Service Provider", 
 					"/calendar/"=>"Event Calendar", 
 					"/waysyoucanhelp/"=>"Ways You Can Help"
-					), 'text', 'strawpatch_list')?>
+					), true, "text", "strawpatch_list")?>
 				
 				<b><a href="/directory/" style="margin-left:-2px;" class="<?php if ($_josh["request"]["path_query"] == "/directory/") {?>selected<?php }?>">Provider Directory</a></b>
 				<ul id="treeview" class="treeview">
@@ -109,7 +104,7 @@ function drawTop($title="Rock Dove Collective") {
 								(SELECT COUNT(*) FROM providers_to_services p2s JOIN providers p ON p2s.object_id = p.id WHERE s.id = p2s.option_id AND p.status = 'Approved') > 0
 							ORDER BY s.title");
 						while ($s = db_fetch($services)) $options["/directory/?type=" . $s["id"]] = $s["title"] . " (" . $s["num_providers"] . ")";
-						echo draw_nav($options, "text", "strawpatch_list");
+						echo draw_nav($options, true, "text", "strawpatch_list");
 						
 					echo "</li>";
 				}
@@ -134,14 +129,14 @@ function drawTop($title="Rock Dove Collective") {
 						"/admin/services.php"=>"Services", 
 						"/login/?action=logout"=>"Logout"
 						);
-					echo draw_nav($options, "text", "admin", 'path');
+					echo draw_nav($options, true, "text", "admin");
 						//move last option off to the left
 						//this might be better as a separate thing not in the <ul> above
 					?>
 						<style type="text/css">#member a.option<?php echo count($options)?> { position:absolute; top:1px; right:6px; }</style>
 					</div>
 					<?php } elseif ($_josh["request"]["folder"] != "login") {
-						echo '<a href="/login/" id="login">Member Login</a>';
+						//echo '<a href="/login/" id="login">Member Login</a>';
 					}
 					echo draw_img("/images/banner-olicana.png");
 					echo draw_nav(array(
@@ -171,7 +166,15 @@ function error_email($msg="Undefined error message") {
 		email($_josh["email_admin"], $msg, "Error: " . $_josh["request"]["host"], $_josh["email_default"]);
 	}
 }
-	
+
+function joshlib() {
+	//look for joshlib at joshlib/index.php, ../joshlib/index.php, all the way down
+	global $_josh;
+	$count = substr_count($_SERVER['DOCUMENT_ROOT'] . $_SERVER['SCRIPT_NAME'], '/');
+	for ($i = 0; $i < $count; $i++) if (@include(str_repeat('../', $i) . 'joshlib/index.php')) return $_josh;
+	die('Could not find Joshlib.');
+}
+
 function providerForm($msg, $p, $showApproved=false) {
 	$form = new form(false, false, false);
 	$form->set_field(array("type"=>"text", "name"=>"name", "label"=>"Name/Alias", "value"=>@$p["name"], "required"=>true));
@@ -226,14 +229,3 @@ function validateEmail($address, $force=false) {
 		return array("id"=>$emailID, "is_valid"=>$force);
 	}
 }
-
-function joshlib() {
-	global $_SERVER, $_josh, $strings, $options;
-	$possibilities = array(
-		"/Users/joshreisner/Sites/joshlib/index.php", //josh local dev
-		"/home/rockdove/www/joshlib/index.php" //icdsoft
-	);
-	foreach ($possibilities as $p) if (@include($p)) return $_josh;
-	die("Can't locate library! " . $_SERVER["DOCUMENT_ROOT"]);
-}
-?>
